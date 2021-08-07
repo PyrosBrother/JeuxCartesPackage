@@ -110,6 +110,6 @@ public class Jeu32CartesAvecJokers : Jeu32Cartes {
     }
     
     override func listerCouleursPossiblesJokers() -> [Carte.CouleurCarte] {
-        return _jokerSansCouleur ? [.AucuneCouleur] : [.Rouge, .Noire]
+        return _jokerSansCouleur ? [.AucuneCouleur] : [.Rouge, .Noir]
     }
 }

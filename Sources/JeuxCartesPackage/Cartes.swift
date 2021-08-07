@@ -72,7 +72,7 @@ public class Carte {
             return false
         case .Joker:
             // les jokers de couleur ne peuvent être que rouges ou noirs
-            return couleur == .Rouge || couleur == .Noire
+            return couleur == .Rouge || couleur == .Noir
         case .Excuse:
             return false
         default:

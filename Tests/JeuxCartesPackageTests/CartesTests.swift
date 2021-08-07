@@ -35,7 +35,7 @@ class CartesTests: XCTestCase {
     func testInitialisationJokers () {
         XCTAssertNotNil(Carte (couleur: .AucuneCouleur, valeur: .Joker))
         XCTAssertNotNil(Carte (couleur: .Rouge, valeur: .Joker))
-        XCTAssertNotNil(Carte (couleur: .Noire, valeur: .Joker))
+        XCTAssertNotNil(Carte (couleur: .Noir, valeur: .Joker))
     }
     
     func testInitialisationExcuse () {
