@@ -43,6 +43,14 @@ public class Carte {
     public var couleur: CouleurCarte
     public var valeur: ValeurCarte
     
+    public func texteCouleur () -> String {
+        return "\(couleur)"
+    }
+    
+    public func texteValeur () -> String {
+        return "\(valeur)"
+    }
+    
     public init? (couleur: CouleurCarte = .AucuneCouleur, valeur: ValeurCarte = .AucuneValeur) {
         if couleur == .AucuneCouleur && valeur == .AucuneValeur { return nil }
         self.couleur = couleur

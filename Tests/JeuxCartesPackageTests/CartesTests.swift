@@ -9,16 +9,19 @@ import XCTest
 @testable import JeuxCartesPackage
 
 class CartesTests: XCTestCase {
-
+    var carteValetPique: Carte!
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         try super.setUpWithError()
+        carteValetPique = Carte (couleur: .Pique, valeur: .Valet)
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
 //        jeu32Cartes = nil
 //        jeu32CartesAvecJokers = nil
+        carteValetPique = nil
         try super.tearDownWithError()
     }
 
@@ -44,16 +47,20 @@ class CartesTests: XCTestCase {
 
     func testInitialisationsCartesValides () {
         // Carte Valet de pique
-        let carteValetPique = Carte (couleur: .Pique, valeur: .Valet)
         XCTAssertNotNil(carteValetPique)
-        XCTAssertEqual(carteValetPique?.couleur, .Pique, "La couleur par defaut ne correspond pas")
-        XCTAssertEqual(carteValetPique?.valeur, .Valet, "La valeur par defaut ne correspond pas")
+        XCTAssertEqual(carteValetPique?.couleur, .Pique, "La couleur de la carte ne correspond pas")
+        XCTAssertEqual(carteValetPique?.valeur, .Valet, "La valeur de la carte ne correspond pas")
         
     }
     
     func testToutesLesProprietesCartes () {
         XCTAssertEqual(Carte.CouleurCarte.allCases.count, 8, "Le nombre de couleurs possibles est invalide")
         XCTAssertEqual(Carte.ValeurCarte.allCases.count, 17, "Le nombre de valeurs possibles est invalide")
+    }
+    
+    func testFonctionsPubliquesCartes () {
+        XCTAssertEqual(carteValetPique?.texteValeur (), "Valet", "Le texte de la valeur ne correspond pas")
+        XCTAssertEqual(carteValetPique?.texteCouleur() , "Pique", "Le texte de la couleur ne correspond pas")
     }
 
 }
