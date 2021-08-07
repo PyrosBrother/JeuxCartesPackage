@@ -49,8 +49,8 @@ public class JeuCartes: JeuCartesProtocol {
         case Cartes32
         case Cartes54
     }
-    let typeJeuCartes: TypeJeuCartes
-    var cartes: [Carte] = []
+    public let typeJeuCartes: TypeJeuCartes
+    public var cartes: [Carte] = []
     
     public init? (typeJeuCartes: TypeJeuCartes = .JeuCartesInconnu) {
         guard typeJeuCartes != .JeuCartesInconnu else { return nil }
@@ -73,7 +73,7 @@ public class JeuCartes: JeuCartesProtocol {
         genererCartesSpeciales ()
     }
     
-    func melangerJeu () {
+    public func melangerJeu () {
         cartes.shuffle()
     }
 }

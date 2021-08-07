@@ -40,8 +40,8 @@ public class Carte {
         case Excuse
     }
     
-    var couleur: CouleurCarte
-    var valeur: ValeurCarte
+    public var couleur: CouleurCarte
+    public var valeur: ValeurCarte
     
     public init? (couleur: CouleurCarte = .AucuneCouleur, valeur: ValeurCarte = .AucuneValeur) {
         if couleur == .AucuneCouleur && valeur == .AucuneValeur { return nil }
