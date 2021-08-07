@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Carte {
+public class Carte {
     enum CouleurCarte: CaseIterable {
         case AucuneCouleur
         case Pique

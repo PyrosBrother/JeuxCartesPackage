@@ -15,7 +15,7 @@ protocol JeuCartesProtocol {
     func listerCouleursPossiblesJokers () -> [Carte.CouleurCarte]
 }
 
-class JeuCartes: JeuCartesProtocol {
+public class JeuCartes: JeuCartesProtocol {
     func nombreJokers() -> Int {
         return 0
     }
@@ -78,7 +78,7 @@ class JeuCartes: JeuCartesProtocol {
     }
 }
 
-class Jeu32Cartes : JeuCartes {
+public class Jeu32Cartes : JeuCartes {
     override func listerValeursPossibles() -> [Carte.ValeurCarte] {
         let listeValeurs: [Carte.ValeurCarte] = [.Sept, .Huit, .Neuf, .Dix, .Valet, .Dame, .Roi, .As]
         return listeValeurs
