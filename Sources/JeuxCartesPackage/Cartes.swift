@@ -8,7 +8,7 @@
 import Foundation
 
 public class Carte {
-    enum CouleurCarte: CaseIterable {
+    public enum CouleurCarte: CaseIterable {
         case AucuneCouleur
         case Pique
         case Coeur
@@ -20,7 +20,7 @@ public class Carte {
     }
     
     //    enum ValeurCarte: CaseIterable, Comparable, Strideable {
-    enum ValeurCarte: CaseIterable {
+    public enum ValeurCarte: CaseIterable {
         case AucuneValeur
         case Deux
         case Trois
@@ -43,7 +43,7 @@ public class Carte {
     var couleur: CouleurCarte
     var valeur: ValeurCarte
     
-    init? (couleur: CouleurCarte = .AucuneCouleur, valeur: ValeurCarte = .AucuneValeur) {
+    public init? (couleur: CouleurCarte = .AucuneCouleur, valeur: ValeurCarte = .AucuneValeur) {
         if couleur == .AucuneCouleur && valeur == .AucuneValeur { return nil }
         self.couleur = couleur
         self.valeur = valeur
@@ -52,7 +52,7 @@ public class Carte {
         }
     }
     
-    func carteValide () -> Bool {
+    public func carteValide () -> Bool {
         return carteSansCouleurValide () || carteCouleurValide ()
     }
     

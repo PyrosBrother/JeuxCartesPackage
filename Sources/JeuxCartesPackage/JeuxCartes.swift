@@ -16,7 +16,7 @@ protocol JeuCartesProtocol {
 }
 
 public class JeuCartes: JeuCartesProtocol {
-    func nombreJokers() -> Int {
+    public func nombreJokers() -> Int {
         return 0
     }
     
@@ -44,7 +44,7 @@ public class JeuCartes: JeuCartesProtocol {
         }
     }
     
-    enum TypeJeuCartes: CaseIterable {
+    public enum TypeJeuCartes: CaseIterable {
         case JeuCartesInconnu
         case Cartes32
         case Cartes54
@@ -52,7 +52,7 @@ public class JeuCartes: JeuCartesProtocol {
     let typeJeuCartes: TypeJeuCartes
     var cartes: [Carte] = []
     
-    init? (typeJeuCartes: TypeJeuCartes = .JeuCartesInconnu) {
+    public init? (typeJeuCartes: TypeJeuCartes = .JeuCartesInconnu) {
         guard typeJeuCartes != .JeuCartesInconnu else { return nil }
         self.typeJeuCartes = typeJeuCartes
         guard listerValeursPossibles().count > 0 else { return nil }
@@ -89,23 +89,23 @@ public class Jeu32Cartes : JeuCartes {
     }
     
     
-    init? () {
+    public init? () {
         super.init (typeJeuCartes: .Cartes32)
         genererJeu ()
     }
 }
 
-class Jeu32CartesAvecJokers : Jeu32Cartes {
+public class Jeu32CartesAvecJokers : Jeu32Cartes {
     var _nombreJokers: Int
     var _jokerSansCouleur: Bool
     
-    init? (nombreJokers: Int, jokerSansCouleur: Bool) {
+    public init? (nombreJokers: Int, jokerSansCouleur: Bool) {
         self._nombreJokers = nombreJokers
         self._jokerSansCouleur = jokerSansCouleur
         super.init()
     }
     
-    override func nombreJokers() -> Int {
+    override public func nombreJokers() -> Int {
         return _nombreJokers
     }
     
