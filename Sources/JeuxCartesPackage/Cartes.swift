@@ -8,7 +8,7 @@
 import Foundation
 
 public class Carte {
-    public enum CouleurCarte: CaseIterable {
+    public enum CouleurCarte: String, CaseIterable {
         case AucuneCouleur
         case Pique
         case Coeur
@@ -20,7 +20,7 @@ public class Carte {
     }
     
     //    enum ValeurCarte: CaseIterable, Comparable, Strideable {
-    public enum ValeurCarte: CaseIterable {
+    public enum ValeurCarte: String, CaseIterable {
         case AucuneValeur
         case Deux
         case Trois
