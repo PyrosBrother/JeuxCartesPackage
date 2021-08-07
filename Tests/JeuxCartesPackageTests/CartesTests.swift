@@ -8,7 +8,6 @@
 import XCTest
 @testable import JeuxCartesPackage
 
-
 class CartesTests: XCTestCase {
 
     override func setUpWithError() throws {
