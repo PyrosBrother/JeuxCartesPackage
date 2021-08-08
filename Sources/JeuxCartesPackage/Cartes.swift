@@ -43,11 +43,26 @@ public class Carte {
     public var couleur: CouleurCarte
     public var valeur: ValeurCarte
     
+    public func nomCarte () -> String {
+        guard carteValide() else { return "" }
+        let nomCarte = texteValeur ()
+        let couleurCarte = texteCouleur()
+        if couleurCarte.isEmpty {
+            return nomCarte
+        }
+        if couleurCarte == "Rouge" || couleurCarte == "Noir" {
+            return "\(nomCarte) \(couleurCarte)"
+        }
+        return "\(nomCarte) de \(couleurCarte)"
+    }
+    
     public func texteCouleur () -> String {
+        guard couleur != .AucuneCouleur else { return "" }
         return "\(couleur)"
     }
     
     public func texteValeur () -> String {
+        guard valeur != .AucuneValeur else { return "" }
         return "\(valeur)"
     }
     
@@ -88,3 +103,5 @@ public class Carte {
         }
     }
 }
+
+
